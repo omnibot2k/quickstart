@@ -1,26 +1,23 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
-export class Hero {
-	id: number;
-	name: string;
-}
-
-  const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+const HEROES: Hero[] = [
+  { id: 11, name: 'Ironman' },
+  { id: 12, name: 'Hulk' },
+  { id: 13, name: 'Thor' },
+  { id: 14, name: 'War Machine' },
+  { id: 15, name: 'The Thing' },
+  { id: 16, name: 'The Human Torch' },
+  { id: 17, name: 'Loki' },
+  { id: 18, name: 'Galactus' },
+  { id: 19, name: 'Dr. Doom' },
+  { id: 20, name: 'Spiderman' }
 ];
 
 @Component({
   selector: 'my-app',
   template:`
+  <h1>{{title}}</h1>
   <h2>My Heroes!</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes"
@@ -29,6 +26,7 @@ export class Hero {
       <span class="badge">{{hero.id}}</span>&nbsp;{{hero.name}}
     </li>
   </ul>
+  <my-hero-detail [hero]="selectedHero"><my-hero-detail>
   `,
    
    styles: [`
@@ -83,7 +81,7 @@ export class Hero {
 })
 
   export class AppComponent  { 
-  title = 'Tour of Heroes';
+  title = 'Kyle\'s Favorite Marvel Super Heroes';
   heroes = HEROES;
   selectedHero: Hero;
 
